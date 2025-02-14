@@ -47,4 +47,3 @@ spec:
       previewService: webpage-preview
       autoPromotionEnabled: false
       autoPromotionSeconds: 45
-      
