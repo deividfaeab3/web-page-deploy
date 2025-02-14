@@ -38,7 +38,7 @@ spec:
     spec:
       containers:
       - name: webpage
-        image: fabricioveronez/pagina-exemplo:blue # blue
+        image: fabricioveronez/pagina-exemplo:blue #blue
         ports:
         - containerPort: 80
   strategy:
