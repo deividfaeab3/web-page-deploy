@@ -22,7 +22,7 @@ spec:
     targetPort: 80
   type: LoadBalancer
 ---
-apiVersion: argoproj/v1alpha1
+apiVersion: argoproj.io/v1alpha1
 kind: Rollout
 metadata:
   name: webpage
