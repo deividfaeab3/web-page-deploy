@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: webpage
+spec:
+  selector:
+    app: webpage
+  ports:
+  - port: 80
+    targetPort: 80
+  type: LoadBalancer
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Rollout
+metadata:
+  name: webpage
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: webpage
+  template:
+    metadata:
+      labels:
+        app: webpage
+    spec:
+      containers:
+      - name: webpage
+        image: fabricioveronez/pagina-exemplo:blue
+        ports:
+        - containerPort: 80
+  strategy:
+    canary:
+      steps:
+      - setWeight: 25
+      - pause: {}
+      - setWeight: 50
+      - pause: { duration: 60s }
+      - setWeight: 100
