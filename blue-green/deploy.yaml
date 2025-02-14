@@ -46,4 +46,4 @@ spec:
       activeService: webpage-active
       previewService: webpage-preview
       autoPromotionEnabled: false
-      autoPromotionSeconds: 45
+      autoPromotionSeconds: 30
