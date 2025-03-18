@@ -15,7 +15,7 @@ kind: Rollout
 metadata:
   name: webpage
 spec:
-  replicas: 4
+  replicas: 1
   selector:
     matchLabels:
       app: webpage
